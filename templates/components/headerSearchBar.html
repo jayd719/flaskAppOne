@@ -1,0 +1,35 @@
+
+
+
+<div class="sreachbox">
+  <!-- input box and button -->
+  <div class="flex gap-2 justify-center">
+    <input type="text" placeholder="Search for a Product" class="sreachbox input input-sm input-bordered w-48 focus:w-96 text-sm text-center rounded-full text-gray-400 transition duration-700 ease-in-out" />
+    <button class="btn btn-sm  rounded-full border-1 hover:bg-green-700 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- results box -->
+  <div class="dropdown bg-base-100 h-96 w-96 absolute z-[100] resultsBox mt-2 border rounded-box overflow-scroll">
+    <ul class="menu ">
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+      <li><a href="">{%include 'components/SearchBoxResultItem.html'%}</a></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .resultsBox{
+    visibility: hidden;
+  }
+  
+.sreachbox:focus-within .resultsBox{
+    visibility: visible;
+  }
+</style>

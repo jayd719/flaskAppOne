@@ -1,0 +1,45 @@
+<div class="bg-green-700 text-center py-2">
+<span class="text-sm text-gray-100">LIMITED OFFER: 30% OFF. Use RABBIT30 at Checkout.{{data}}
+    <span class="countdown font-mono " id="time">
+        
+      </span>
+</span>
+</div>
+
+<script>
+
+function calculateTimeFromDate(inputDate) {
+  // Convert inputDate to a JavaScript Date object
+  const startDate = new Date(inputDate);
+
+  // Get the current date and time
+  const currentDate = new Date();
+
+  // Calculate the difference in milliseconds
+  const difference = startDate - currentDate;
+
+  // Convert milliseconds to days, hours, minutes, and seconds
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  return {
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+  };
+}
+function countdown(){
+    const inputDate = "2025-08-30T12:00:00"; // Example date string
+    const timeDifference = calculateTimeFromDate(inputDate);
+    document.getElementById("time").innerText = `${timeDifference.hours}H${timeDifference.minutes}M${timeDifference.seconds}s`
+    console.log(timeDifference)
+    }
+
+
+    setInterval(countdown, 1000);
+</script>

@@ -1,0 +1,70 @@
+<html lang="en" data-theme="light">
+    <head>
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+            </style>
+        
+   <body class="poppins-regular">
+
+   
+    {%block content %}
+    {%endblock%}
+
+
+   {% include 'backbutton.html'%}
+
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <!-- have a button POST a click via AJAX -->
+    
+   </body>
+
+
+   <script>
+    // Select buttons with class '.buttonNax'
+    let elements = document.querySelectorAll('.buttonNax');
+
+    // Function to change button styles
+    function changeButtonStyle(button) {
+        // Add or modify classes using classList methods
+        button.classList.add('w-auto', 'rounded-full','transition' ,'transition-delay-400','lg:hover:bg-green-700', 'lg:hover:text-white', 'px-5','py-2');
+    }
+
+    // Apply the function to each button
+    elements.forEach(button => changeButtonStyle(button));
+
+    
+
+
+    
+</script>
+
+  
+
+
+
+  </html>
