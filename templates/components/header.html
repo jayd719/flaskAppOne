@@ -10,10 +10,11 @@
     <div class="navbar-center hidden lg:flex w-1/2 justify-center">
         {%include 'components/headerSearchBar.html'%}
     </div>
-  
+    
+      <!-- cart -->
       <div class="navbar-end">
         <ul class="menu menu-horizontal px-5 gap-4 hidden lg:flex">
-            <li><a href="/" class="buttonNax border"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <li><a href="{{ url_for('viewCart')}}" class="buttonNax border"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
               </svg></a></li>
         </ul>
@@ -48,3 +49,17 @@
   </div>
 
  
+
+  <script>
+    // Select buttons with class '.buttonNax'
+    let elements = document.querySelectorAll('.buttonNax');
+
+    // Function to change button styles
+    function changeButtonStyle(button) {
+        // Add or modify classes using classList methods
+        button.classList.add('w-auto', 'rounded-full','transition' ,'transition-delay-400','lg:hover:bg-green-700', 'lg:hover:text-white', 'px-5','py-2');
+    }
+
+    // Apply the function to each button
+    elements.forEach(button => changeButtonStyle(button));
+</script>

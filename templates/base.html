@@ -36,33 +36,14 @@
     {%endblock%}
 
 
-   {% include 'backbutton.html'%}
+
 
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-    <!-- have a button POST a click via AJAX -->
     
    </body>
 
 
-   <script>
-    // Select buttons with class '.buttonNax'
-    let elements = document.querySelectorAll('.buttonNax');
-
-    // Function to change button styles
-    function changeButtonStyle(button) {
-        // Add or modify classes using classList methods
-        button.classList.add('w-auto', 'rounded-full','transition' ,'transition-delay-400','lg:hover:bg-green-700', 'lg:hover:text-white', 'px-5','py-2');
-    }
-
-    // Apply the function to each button
-    elements.forEach(button => changeButtonStyle(button));
-
-    
-
-
-    
-</script>
-
+ 
   
 
 

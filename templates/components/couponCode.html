@@ -1,0 +1,94 @@
+<div class="h-64 grid items-stretch overflow-hidden">
+    <div class="absolute bg-green-900 w-11/12 h-64" id="waitDiv">
+        <button type="button" class="w-full h-full inline-flex items-center justify-center px-4 py-2 font-semibold leading-6 text-lg text-white transition ease-in-out duration-150 cursor-not-allowed" disabled="">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Processing...
+          </button>
+    </div>
+    <div class="mb-5">
+        <div class="con" id="confetti-container"></div>
+        <h1 class="font-title text-6xl lg:text-5xl font-bold text-white leading-[1.1] mb-5">RABBIT20</h1>
+        <p class="font-sm mb-5 text-gray-200">Use Coupon Code to avial 20% off on your first purchase</p>
+    </div>
+    <hr class="border-gray-600">
+    <div class="mt-5">
+        <button class="border border-gray-400 font-bold rounded-full mx-auto my-3 text-white px-8 py-3 text-sm hover:text-black hover:bg-white hover:border-green-200 transition delay-10">Refer PaperPulse to A Friend and win $100 gift Card</button>
+    </div>
+</div>
+
+
+
+
+<script>
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+    setTimeout(()=>{document.getElementById('waitDiv').remove()
+        let confettiContainer = document.getElementById('confetti-container')
+        let str = ""
+        for(i =0;i<20;i++){
+            str +=`<div class="confetti" style="left:${randomInRange(0,100)}%;"></div>`
+            console.log(randomInRange(0,100))
+        }
+        confettiContainer.innerHTML=str
+        setTimeout(()=>{
+            confettiContainer.remove()
+        },2000)
+    },700)
+    
+    
+</script>
+
+<style>
+    
+    .confetti {
+      width: 15px;
+      height: 15px;
+      background-color: #f2d74e;
+      position: absolute;
+      animation: confetti 5s ease-in-out -2s forwards;
+      transform-origin: left top;
+    }
+    .confetti:nth-child(1) {
+      background-color: #f2d74e;  animation-delay: 0;
+    }
+    .confetti:nth-child(2) {
+      background-color: #95c3de; animation-delay: -5s;
+    }
+    .confetti:nth-child(3) {
+      background-color: #ff9a91;animation-delay: -3s;
+    }
+    .confetti:nth-child(4) {
+      background-color: #f2d74e; animation-delay: -2.5s;
+    }
+    .confetti:nth-child(5) {
+      background-color: #95c3de; animation-delay: -4s;
+    }
+    .confetti:nth-child(6) {
+      background-color: #ff9a91; animation-delay: -6s;
+    }
+    .confetti:nth-child(7) {
+      background-color: #f2d74e; animation-delay: -1.5s;
+    }
+    .confetti:nth-child(8) {
+      background-color: #95c3de; animation-delay: -2s;
+    }
+    .confetti:nth-child(9) {
+      background-color: #ff9a91;animation-delay: -3.5s;
+    }
+    .confetti:nth-child(10) {
+      background-color: #f2d74e;animation-delay: -2.5s;
+    }
+
+    @keyframes confetti {
+      0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+      25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+      50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+      75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+      100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+    }
+    </style>

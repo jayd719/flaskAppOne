@@ -1,16 +1,18 @@
 <div class="h-64"></div>
 <div class="h-24 mb-10">
     <div class="bg-green-800 flex justify-center ">
-        <div class="w-96 md:w-3/5 translate-y-[-50%] rounded-3xl bg-green-900 py-10 px-5 lg:px-10">
-            <div class="text-start text-white w-full lg:w-3/4">
+        <div class="w-96 md:w-3/5 translate-y-[-50%] rounded-3xl bg-green-900 py-10 px-5 lg:px-10" id="couponCodeDiv">
+            <div class="text-start text-white w-full lg:w-3/4" >
                 <h1 class="font-title text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-5">UNLOCK 20% OFF YOUR FIRST ORDER</h1>
                 <p class="font-sm mb-5 text-gray-200">Reveal coupon code by entering your email</p>
             </div>
             <hr class="border-gray-600">
-            <div class="w-full gap-5 mt-5">
-                <input type="text" class="input border-1 border-gray-400 w-full lg:w-8/12 rounded-full bg-transparent px-10 text-sm text-white focus:border-white focus:border-2" placeholder="Email">
-                <button class="border border-gray-400 font-bold rounded-full mx-auto my-3 text-white px-8 py-3 text-sm hover:text-black hover:bg-white hover:border-green-200 transition delay-10">Reveal Coupon</button>
-            </div>
+            <form class="w-full gap-5 mt-5" hx-get="/couponCode" hx-trigger="submit" hx-target="#couponCodeDiv"validate>
+                <input name="email" type="email" class="peer input border-1 border-gray-400 w-full lg:w-8/12 rounded-full bg-transparent px-10 text-sm text-white focus:border-white focus:border-2 invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 invalid:border-2  valid:border-2  valid:border-lime-500" placeholder="john@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <button   
+                
+                class="border border-gray-400 font-bold rounded-full mx-auto my-3 text-white px-8 py-3 text-sm hover:text-black hover:bg-white hover:border-green-200 transition delay-10">Reveal Coupon</button>
+            </form>
         </div>
     </div>
 </div>
